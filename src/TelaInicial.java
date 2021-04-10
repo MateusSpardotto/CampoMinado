@@ -31,6 +31,13 @@ public class TelaInicial
 		mnNewMenu.add(mnNewMenu_1);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("F\u00E1cil");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e)
+			{
+				TelaFacil telaFacil = new TelaFacil();
+				telaFacil.setVisible(true);
+			}
+		});
 		mnNewMenu_1.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("M\u00E9dio");
