@@ -1,9 +1,16 @@
+import javax.swing.SwingUtilities;
 
 public class Main {
 
-	public static void main(String[] args) {
-		SistemaCampoMinado sistema = new SistemaCampoMinado();
-		sistema.iniciarSistema();
+	public static void main(String[] args)
+	{
+		SwingUtilities.invokeLater(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				new TelaInicial();
+			}
+		});
 	}
-
 }
