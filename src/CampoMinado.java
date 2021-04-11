@@ -21,6 +21,11 @@ public class CampoMinado {
 	private long inicioCronometro;
 	private String dificuldadeSelecionada;
 	
+	public char[][] getTela()
+	{
+		return this.tela;
+	}
+	
 	public CampoMinado() {
 		vetorPosicoesParaVerificar = new ArrayList<int[]>();
 	}
@@ -30,21 +35,21 @@ public class CampoMinado {
 			case 1: {
 				listaBombas = new char[10][8];
 				tela = new char[10][8];
-				dificuldadeSelecionada = "Nível Fácil  "; 
+				dificuldadeSelecionada = "Facil"; 
 				break;
 			}
 			
 			case 2: {
 				listaBombas = new char[18][14];
 				tela = new char[18][14];
-				dificuldadeSelecionada = "Nível Médio ";
+				dificuldadeSelecionada = "Medio";
 				break;
 			}
 			
 			case 3: {
 				listaBombas = new char[24][20];
 				tela = new char[24][20];
-				dificuldadeSelecionada = "Nível Difícil";
+				dificuldadeSelecionada = "Dificil";
 				break;
 			}
 		}
