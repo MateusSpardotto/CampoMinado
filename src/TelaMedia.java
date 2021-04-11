@@ -1,22 +1,17 @@
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.GridBagLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
-import java.awt.Color;
+import java.util.ArrayList;
 
-public class TelaFacil extends JFrame {
-	TelaFacil frame;
-	private GeraTelaFacil jogo = null;
+public class TelaMedia extends JFrame {
 
+	TelaMedia frame;
+	private GeraTelaMedia jogo = null;
 	private JPanel panel;
 	ArrayList<JButton> buttons;
 
@@ -24,7 +19,7 @@ public class TelaFacil extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaFacil frame = new TelaFacil();
+					TelaMedia frame = new TelaMedia();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,43 +28,24 @@ public class TelaFacil extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public TelaFacil() {
+	public TelaMedia() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-
-		JMenuBar menuBar = new JMenuBar();
-		setJMenuBar(menuBar);
-
-		JMenu mnNewMenu = new JMenu("Inicio");
-
-		mnNewMenu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame = new TelaFacil();
-				frame.dispose();
-			}
-		});
-
-		menuBar.add(mnNewMenu);
+		setBounds(100, 100, 647, 451);
 		panel = new JPanel();
-		panel.setBackground(Color.WHITE);
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(panel);
-		panel.setLayout(new GridLayout(8, 10, 0, 0));
+		panel.setLayout(new GridLayout(14, 18, 0, 0));
 
 		buttons = new ArrayList<JButton>();
 
-		jogo = new GeraTelaFacil(this, GeraTelaFacil.FACIL);
+		jogo = new GeraTelaMedia(this, GeraTelaMedia.MEDIO);
 
-		gerarBotoes(GeraTelaFacil.FACIL, jogo);
+		gerarBotoes(GeraTelaMedia.MEDIO, jogo);
 
 		jogo.preencherCampo();
-
 	}
 
-	public void gerarBotoes(int dificuldade, GeraTelaFacil jogo) {
+	public void gerarBotoes(int dificuldade, GeraTelaMedia jogo) {
 		int nBotoes = 0;
 
 		switch (dificuldade) {
@@ -111,5 +87,4 @@ public class TelaFacil extends JFrame {
 			}
 		}
 	}
-
 }
