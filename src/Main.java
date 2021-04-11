@@ -2,13 +2,10 @@ import javax.swing.SwingUtilities;
 
 public class Main {
 
-	public static void main(String[] args)
-	{
-		SwingUtilities.invokeLater(new Runnable()
-		{
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(new Runnable() {
 			@Override
-			public void run()
-			{
+			public void run() {
 				new TelaInicial();
 			}
 		});
