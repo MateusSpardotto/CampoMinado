@@ -38,9 +38,9 @@ public class TelaMedia extends JFrame {
 
 		buttons = new ArrayList<JButton>();
 
-		jogo = new GeraTelaMedia(this, GeraTelaMedia.MEDIO);
+		jogo = new GeraTelaMedia(this, 2);
 
-		gerarBotoes(GeraTelaMedia.MEDIO, jogo);
+		gerarBotoes(2, jogo);
 
 		jogo.preencherCampo();
 	}
@@ -48,20 +48,7 @@ public class TelaMedia extends JFrame {
 	public void gerarBotoes(int dificuldade, GeraTelaMedia jogo) {
 		int nBotoes = 0;
 
-		switch (dificuldade) {
-
-		case GeraTelaFacil.FACIL:
-			nBotoes = GeraTelaFacil.QTD_CAMPOS_FACIL;
-			break;
-
-		case GeraTelaFacil.MEDIO:
-			nBotoes = GeraTelaFacil.QTD_CAMPOS_MEDIO;
-			break;
-
-		case GeraTelaFacil.DIFICIL:
-			nBotoes = GeraTelaFacil.QTD_CAMPOS_DIFICIL;
-			break;
-		}
+		nBotoes = 168;
 
 		JButton btn = null;
 
@@ -73,18 +60,7 @@ public class TelaMedia extends JFrame {
 
 			buttons.add(btn);
 
-			switch (dificuldade) {
-
-			case GeraTelaFacil.FACIL:
-				panel.add(btn);
-				break;
-			case GeraTelaFacil.MEDIO:
-				panel.add(btn);
-				break;
-			case GeraTelaFacil.DIFICIL:
-				panel.add(btn);
-				break;
-			}
+			panel.add(btn);
 		}
 	}
 }
