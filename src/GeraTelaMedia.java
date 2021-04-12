@@ -10,62 +10,16 @@ import javax.swing.JOptionPane;
 
 public class GeraTelaMedia implements ActionListener {
 
-	public static final int FACIL = 1;
-	public static final int MEDIO = 2;
-	public static final int DIFICIL = 3;
-
-	private final double PCT_FACIL = 0.1;
-	private final double PCT_MEDIO = 0.15;
-	private final double PCT_DIFICIL = 0.25;
-
-	private final int NROWS_FACIL = 8;
-	private final int NCOLS_FACIL = 10;
-
-	private final int NROWS_MEDIO = 12;
-	private final int NCOLS_MEDIO = 14;
-
-	private final int NROWS_DIFICIL = 16;
-	private final int NCOLS_DIFICIL = 18;
-
-	public static final int QTD_CAMPOS_FACIL = 80;
-	public static final int QTD_CAMPOS_MEDIO = 168;
-	public static final int QTD_CAMPOS_DIFICIL = 288;
-
-	private int nRows;
-	private int nCols;
+	private int nRows = 12;
+	private int nCols = 14;
 	private int nRowsCols;
-
 	private int nBombas;
-	private int dificuldade;
 
 	private List<Posicao> campo;
-
 	private TelaMedia tela;
 
 	public GeraTelaMedia(TelaMedia tela, int dificuldade) {
 		this.tela = tela;
-
-		this.dificuldade = dificuldade;
-
-		switch (dificuldade) {
-		case FACIL: {
-			nRows = NROWS_FACIL;
-			nCols = NCOLS_FACIL;
-		}
-			break;
-
-		case MEDIO: {
-			nRows = NROWS_MEDIO;
-			nCols = NCOLS_MEDIO;
-		}
-			break;
-
-		case DIFICIL: {
-			nRows = NROWS_DIFICIL;
-			nCols = NCOLS_DIFICIL;
-		}
-			break;
-		}
 
 		nRowsCols = nRows * nCols;
 
@@ -154,22 +108,7 @@ public class GeraTelaMedia implements ActionListener {
 
 		Random rand = new Random();
 
-		switch (dificuldade) {
-		case FACIL: {
-			nBombas = (int) (((double) nRowsCols) * PCT_FACIL);
-		}
-			break;
-
-		case MEDIO: {
-			nBombas = (int) (((double) nRowsCols) * PCT_MEDIO);
-		}
-			break;
-
-		case DIFICIL: {
-			nBombas = (int) (((double) nRowsCols) * PCT_DIFICIL);
-		}
-			break;
-		}
+		nBombas = 40;
 
 		while (bombas.size() < nBombas) {
 			int id = rand.nextInt(nRowsCols + 1);

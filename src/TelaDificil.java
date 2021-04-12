@@ -13,7 +13,7 @@ public class TelaDificil extends JFrame {
 	private GeraTelaDificil jogo = null;
 	private JPanel panel;
 	ArrayList<JButton> buttons;
-	
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -37,35 +37,22 @@ public class TelaDificil extends JFrame {
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(panel);
 		panel.setLayout(new GridLayout(20, 24, 0, 0));
-		
+
 		buttons = new ArrayList<JButton>();
 
-		jogo = new GeraTelaDificil(this, GeraTelaDificil.DIFICIL);
+		jogo = new GeraTelaDificil(this, 3);
 
-		gerarBotoes(GeraTelaDificil.DIFICIL, jogo);
+		gerarBotoes(3, jogo);
 
 		jogo.preencherCampo();
 	}
-	
+
 	public void gerarBotoes(int dificuldade, GeraTelaDificil jogo) {
 		int nBotoes = 0;
 
-		switch (dificuldade) {
+		nBotoes = 480;
 
-		case GeraTelaDificil.FACIL:
-			nBotoes = GeraTelaDificil.QTD_CAMPOS_FACIL;
-			break;
-
-		case GeraTelaDificil.MEDIO:
-			nBotoes = GeraTelaDificil.QTD_CAMPOS_MEDIO;
-			break;
-
-		case GeraTelaDificil.DIFICIL:
-			nBotoes = GeraTelaDificil.QTD_CAMPOS_DIFICIL;
-			break;
-		}
-
-		JButton btn = null;
+		JButton btn;
 
 		for (int idx = 1; idx <= nBotoes; idx++) {
 
@@ -75,18 +62,7 @@ public class TelaDificil extends JFrame {
 
 			buttons.add(btn);
 
-			switch (dificuldade) {
-
-			case GeraTelaDificil.FACIL:
-				panel.add(btn);
-				break;
-			case GeraTelaDificil.MEDIO:
-				panel.add(btn);
-				break;
-			case GeraTelaDificil.DIFICIL:
-				panel.add(btn);
-				break;
-			}
+			panel.add(btn);
 		}
 	}
 

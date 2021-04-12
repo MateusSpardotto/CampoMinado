@@ -1,5 +1,6 @@
+import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -10,8 +11,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-import java.awt.Color;
 
 public class TelaFacil extends JFrame {
 	TelaFacil frame;
@@ -61,9 +60,9 @@ public class TelaFacil extends JFrame {
 
 		buttons = new ArrayList<JButton>();
 
-		jogo = new GeraTelaFacil(this, GeraTelaFacil.FACIL);
+		jogo = new GeraTelaFacil(this, 1);
 
-		gerarBotoes(GeraTelaFacil.FACIL, jogo);
+		gerarBotoes(1, jogo);
 
 		jogo.preencherCampo();
 
@@ -72,20 +71,7 @@ public class TelaFacil extends JFrame {
 	public void gerarBotoes(int dificuldade, GeraTelaFacil jogo) {
 		int nBotoes = 0;
 
-		switch (dificuldade) {
-
-		case GeraTelaFacil.FACIL:
-			nBotoes = GeraTelaFacil.QTD_CAMPOS_FACIL;
-			break;
-
-		case GeraTelaFacil.MEDIO:
-			nBotoes = GeraTelaFacil.QTD_CAMPOS_MEDIO;
-			break;
-
-		case GeraTelaFacil.DIFICIL:
-			nBotoes = GeraTelaFacil.QTD_CAMPOS_DIFICIL;
-			break;
-		}
+		nBotoes = 80;
 
 		JButton btn = null;
 
@@ -97,18 +83,7 @@ public class TelaFacil extends JFrame {
 
 			buttons.add(btn);
 
-			switch (dificuldade) {
-
-			case GeraTelaFacil.FACIL:
-				panel.add(btn);
-				break;
-			case GeraTelaFacil.MEDIO:
-				panel.add(btn);
-				break;
-			case GeraTelaFacil.DIFICIL:
-				panel.add(btn);
-				break;
-			}
+			panel.add(btn);
 		}
 	}
 
